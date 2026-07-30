@@ -38,7 +38,16 @@ cd /Users/etienne/ripe-peinture && python3 -m http.server 8642
 
 puis ouvrir http://localhost:8642
 
-## Mise en ligne
+## Le site en ligne
 
-Hébergement statique gratuit prévu (Netlify ou Vercel) : on glisse le dossier,
-on branche le nom de domaine. Aucun serveur à entretenir.
+**https://etiennedubo.github.io/ripe-peinture/**
+
+Hébergé gratuitement par GitHub Pages, dépôt `etiennedubo/ripe-peinture`.
+Toute modification poussée sur la branche `main` est en ligne en une minute :
+
+```bash
+cd /Users/etienne/ripe-peinture && git push
+```
+
+Le nom de domaine (ripe-peinture.fr) pourra être branché dessus plus tard,
+sans rien changer au site.
