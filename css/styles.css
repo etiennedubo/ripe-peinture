@@ -350,6 +350,10 @@ a:hover { color: var(--ink); }
 
 .doc-section { padding-block: clamp(30px, 5vw, 58px); }
 
+/* La première section après le cadran d'en-tête remonte : le bas du cadran
+   apporte déjà sa respiration, inutile d'empiler deux marges. */
+.hero + .doc-section { padding-top: 4px; }
+
 .section-head {
   display: flex;
   align-items: center;
