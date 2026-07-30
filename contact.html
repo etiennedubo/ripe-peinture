@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; devis — RIPE, plâtrerie et peinture en Rhône et Isère</title>
+  <meta name="description" content="Contactez RIPE pour un devis de plâtrerie, peinture, revêtements de sol ou protections de chantier, en Rhône et Isère. Réponse claire, établie par les personnes qui réaliseront le chantier.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-mark.svg" alt="" width="46" height="27">
+        <span>
+          <span class="brand-name">RIPE</span>
+          <span class="brand-sub">Plâtrerie · Peinture<span class="sub-date"> — depuis 1986</span></span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="site-nav" id="menu" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="entreprise.html">Qui sommes-nous</a></li>
+          <li><a href="prestations.html">Prestations</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="hero wrap" aria-label="Contact">
+      <div class="panel assemble">
+        <div class="panel-head">
+          <span class="hero-mark">
+            <img src="assets/logo-mark.svg" alt="" width="54" height="31">
+            <span class="kicker">Contact &amp; devis</span>
+          </span>
+          <span class="hero-since">Réponse par nos soins</span>
+        </div>
+        <div class="panel-body">
+          <h1>Décrivez-nous <span class="thin">votre projet</span></h1>
+          <p class="hero-lede">
+            Quelques lignes suffisent pour démarrer. Votre demande arrive
+            <strong>directement chez nous</strong> — pas de plateforme, pas
+            d'intermédiaire — et c'est l'équipe qui réalisera le chantier qui
+            vous répond.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section wrap" aria-label="Formulaire de contact">
+      <div class="contact-grid">
+
+        <div class="panel">
+          <div class="panel-head">
+            <svg class="rive" viewBox="0 0 44 16" aria-hidden="true">
+              <polygon fill="#46525c" points="0,16 11,1 16,1 5,16"/>
+              <polygon fill="#6aaa35" points="17,4 22,4 33,16 28,16"/>
+            </svg>
+            <span class="kicker">Demande de devis</span>
+          </div>
+          <div class="panel-body">
+            <form id="contact-form" novalidate>
+              <div class="form-alert" hidden tabindex="-1" role="alert">
+                L'envoi en ligne n'est pas encore activé. En attendant, contactez-nous
+                directement avec les coordonnées ci-contre — votre message n'a pas été perdu,
+                vous pouvez le copier avant de quitter la page.
+              </div>
+
+              <div class="form-row">
+                <label for="nom">Votre nom</label>
+                <input id="nom" name="nom" type="text" autocomplete="name" required>
+                <p class="field-error"></p>
+              </div>
+
+              <div class="form-row">
+                <label for="societe">Société <span class="optional">— facultatif</span></label>
+                <input id="societe" name="societe" type="text" autocomplete="organization">
+                <p class="field-error"></p>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Adresse e-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <p class="field-error"></p>
+              </div>
+
+              <div class="form-row">
+                <label for="telephone">Téléphone <span class="optional">— facultatif, pour être rappelé</span></label>
+                <input id="telephone" name="telephone" type="tel" autocomplete="tel">
+                <p class="field-error"></p>
+              </div>
+
+              <div class="form-row">
+                <label for="type-lieu">Lieu des travaux</label>
+                <select id="type-lieu" name="type_de_lieu">
+                  <option>Maison ou appartement</option>
+                  <option>Bureaux ou commerce</option>
+                  <option>Site industriel ou laboratoire</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Votre projet</label>
+                <textarea id="message" name="message" required
+                  placeholder="Par exemple : nature des travaux, surface approximative, commune, période souhaitée…"></textarea>
+                <p class="field-error"></p>
+              </div>
+
+              <button class="btn btn--primary" type="submit">Envoyer la demande</button>
+            </form>
+
+            <div id="form-success" class="form-success" hidden tabindex="-1">
+              <strong>Votre demande est bien partie.</strong>
+              Nous vous répondons dans les meilleurs délais, par e-mail ou par
+              téléphone si vous avez laissé un numéro.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel contact-aside">
+          <div class="panel-head">
+            <span class="kicker">Nos coordonnées</span>
+          </div>
+          <dl class="fields">
+            <div class="field"><dt>Téléphone</dt><dd><span class="todo">À compléter</span></dd></div>
+            <div class="field"><dt>E-mail</dt><dd><span class="todo">À compléter</span></dd></div>
+            <div class="field"><dt>Adresse</dt><dd><span class="todo">À compléter</span></dd></div>
+            <div class="field"><dt>Zone d'intervention</dt><dd>Rhône &amp; Isère</dd></div>
+          </dl>
+          <p class="aside-note">
+            Professionnels : joignez votre cahier des charges à votre demande,
+            nous y répondons point par point.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <a class="brand" href="index.html">
+          <img src="assets/logo-mark.svg" alt="" width="46" height="27">
+          <span>
+            <span class="brand-name">RIPE</span>
+            <span class="brand-sub">Rhône Isère Peinture Entretien</span>
+          </span>
+        </a>
+        <nav class="footer-nav" aria-label="Pied de page">
+          <ul>
+            <li><a href="entreprise.html">Qui sommes-nous</a></li>
+            <li><a href="prestations.html">Prestations</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <span class="todo">Coordonnées à compléter</span>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <span>© <span data-year>2026</span> RIPE — Rhône Isère Peinture Entretien</span>
+        <span>SIRET : <span class="todo">à compléter</span></span>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

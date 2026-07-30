@@ -1,0 +1,107 @@
+/* RIPE — comportements du site (navigation mobile + formulaire de contact) */
+
+(function () {
+  "use strict";
+
+  /* Navigation mobile */
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.querySelector(".site-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.textContent = open ? "Fermer" : "Menu";
+    });
+  }
+
+  /* Année courante dans le pied de page */
+  var yearEl = document.querySelector("[data-year]");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* Formulaire de contact.
+     FORM_ENDPOINT reste vide tant que le compte Formspree n'est pas créé :
+     le formulaire explique alors comment joindre l'entreprise directement. */
+  var FORM_ENDPOINT = "";
+
+  var form = document.querySelector("#contact-form");
+  if (!form) return;
+
+  var alertBox = form.querySelector(".form-alert");
+  var successBox = document.querySelector("#form-success");
+  var submitBtn = form.querySelector("button[type=submit]");
+
+  function setError(row, message) {
+    row.classList.add("invalid");
+    var msg = row.querySelector(".field-error");
+    if (msg) msg.textContent = message;
+  }
+
+  function clearErrors() {
+    form.querySelectorAll(".form-row.invalid").forEach(function (row) {
+      row.classList.remove("invalid");
+    });
+    if (alertBox) alertBox.hidden = true;
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    clearErrors();
+
+    var valid = true;
+    var focusTarget = null;
+
+    form.querySelectorAll("[required]").forEach(function (input) {
+      var row = input.closest(".form-row");
+      var value = input.value.trim();
+      if (!value) {
+        setError(row, "Ce champ est nécessaire pour traiter votre demande.");
+        valid = false;
+        if (!focusTarget) focusTarget = input;
+      } else if (input.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        setError(row, "Cette adresse e-mail semble incomplète (exemple : nom@domaine.fr).");
+        valid = false;
+        if (!focusTarget) focusTarget = input;
+      }
+    });
+
+    if (!valid) {
+      if (focusTarget) focusTarget.focus();
+      return;
+    }
+
+    if (!FORM_ENDPOINT) {
+      if (alertBox) {
+        alertBox.hidden = false;
+        alertBox.focus();
+      }
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Envoi en cours…";
+
+    fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(form)
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error("send-failed");
+        form.hidden = true;
+        if (successBox) {
+          successBox.hidden = false;
+          successBox.focus();
+        }
+      })
+      .catch(function () {
+        if (alertBox) {
+          alertBox.hidden = false;
+          alertBox.focus();
+        }
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Envoyer la demande";
+      });
+  });
+})();

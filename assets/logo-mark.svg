@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 124" role="img" aria-label="RIPE">
+  <polygon fill="#46525c" points="8,120 98,8 124,8 34,120"/>
+  <polygon fill="#6aaa35" points="106,26 132,26 204,120 178,120"/>
+  <g>
+    <rect x="96" y="62" width="24" height="24" rx="3" fill="#46525c"/>
+    <line x1="108" y1="64" x2="108" y2="84" stroke="#ffffff" stroke-width="3"/>
+    <line x1="98" y1="74" x2="118" y2="74" stroke="#ffffff" stroke-width="3"/>
+  </g>
+</svg>
