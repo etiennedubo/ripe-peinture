@@ -232,6 +232,8 @@ a:hover { color: var(--ink); }
   font-variant-numeric: tabular-nums;
 }
 
+.field dd a { color: var(--ink); }
+
 .fields--dark { background: #3d4954; border-top-color: #3d4954; }
 .fields--dark .field { background: var(--ink); }
 .fields--dark .field dt { color: #9fb0ba; }
@@ -755,6 +757,16 @@ a.lot:hover .lot-go { background: var(--green-ink); color: #fff; border-color: v
 }
 
 .footer-nav a:hover { color: var(--green-bright); }
+
+.footer-coords {
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #b7c1c9;
+}
+
+.footer-coords a { color: #d8dde1; }
+.footer-coords a:hover { color: var(--green-bright); }
 
 .footer-legal {
   margin-top: 26px;
