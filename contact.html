@@ -54,12 +54,17 @@
             vous répond.
           </p>
         </div>
+        <dl class="fields">
+          <div class="field"><dt>Téléphone</dt><dd><span class="todo">À compléter</span></dd></div>
+          <div class="field"><dt>E-mail</dt><dd><span class="todo">À compléter</span></dd></div>
+          <div class="field"><dt>Adresse</dt><dd><span class="todo">À compléter</span></dd></div>
+          <div class="field"><dt>Zone d'intervention</dt><dd>Région lyonnaise</dd></div>
+        </dl>
       </div>
     </section>
 
     <section class="doc-section wrap" aria-label="Formulaire de contact">
-      <div class="contact-grid">
-
+      <div class="form-wrap">
         <div class="panel">
           <div class="panel-head">
             <svg class="rive" viewBox="0 0 44 16" aria-hidden="true">
@@ -69,10 +74,14 @@
             <span class="kicker">Demande de devis</span>
           </div>
           <div class="panel-body">
+            <p class="form-note">
+              Professionnels&#8239;: joignez votre cahier des charges à votre demande,
+              nous y répondons point par point.
+            </p>
             <form id="contact-form" novalidate>
               <div class="form-alert" hidden tabindex="-1" role="alert">
                 L'envoi en ligne n'est pas encore activé. En attendant, contactez-nous
-                directement avec les coordonnées ci-contre — votre message n'a pas été perdu,
+                directement avec les coordonnées en haut de page — votre message n'a pas été perdu,
                 vous pouvez le copier avant de quitter la page.
               </div>
 
@@ -100,15 +109,6 @@
                 <p class="field-error"></p>
               </div>
 
-              <div class="form-row">
-                <label for="type-lieu">Lieu des travaux</label>
-                <select id="type-lieu" name="type_de_lieu">
-                  <option>Maison ou appartement</option>
-                  <option>Bureaux ou commerce</option>
-                  <option>Site industriel ou laboratoire</option>
-                  <option>Autre</option>
-                </select>
-              </div>
 
               <div class="form-row">
                 <label for="message">Votre projet</label>
@@ -128,21 +128,6 @@
           </div>
         </div>
 
-        <div class="panel contact-aside">
-          <div class="panel-head">
-            <span class="kicker">Nos coordonnées</span>
-          </div>
-          <dl class="fields">
-            <div class="field"><dt>Téléphone</dt><dd><span class="todo">À compléter</span></dd></div>
-            <div class="field"><dt>E-mail</dt><dd><span class="todo">À compléter</span></dd></div>
-            <div class="field"><dt>Adresse</dt><dd><span class="todo">À compléter</span></dd></div>
-            <div class="field"><dt>Zone d'intervention</dt><dd>Région lyonnaise</dd></div>
-          </dl>
-          <p class="aside-note">
-            Professionnels : joignez votre cahier des charges à votre demande,
-            nous y répondons point par point.
-          </p>
-        </div>
       </div>
     </section>
   </main>

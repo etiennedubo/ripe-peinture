@@ -612,15 +612,14 @@ a.lot:hover .lot-go { background: var(--green-ink); color: #fff; border-color: v
 
 /* ---------- Contact ---------- */
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: clamp(20px, 3vw, 32px);
-  align-items: start;
-}
+.form-wrap { max-width: 780px; margin-inline: auto; }
 
-@media (max-width: 860px) {
-  .contact-grid { grid-template-columns: 1fr; }
+.form-note {
+  color: var(--slate);
+  font-size: 0.98rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 16px;
+  margin-bottom: 22px;
 }
 
 .form-row { margin-bottom: 18px; }
@@ -691,14 +690,7 @@ a.lot:hover .lot-go { background: var(--green-ink); color: #fff; border-color: v
 
 [hidden] { display: none !important; }
 
-.contact-aside .fields { grid-template-columns: 1fr; border-top: none; }
 
-.aside-note {
-  padding: 16px 18px;
-  color: var(--slate);
-  font-size: 0.98rem;
-  border-top: 1px solid var(--rule);
-}
 
 /* ---------- Appel final ---------- */
 
