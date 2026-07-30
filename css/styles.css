@@ -137,8 +137,55 @@ a:hover { color: var(--ink); }
 .site-nav a:hover { color: var(--ink); border-bottom-color: var(--ink); }
 .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--green); }
 
-@media (max-width: 560px) {
+@media (max-width: 900px) {
   .site-header .sub-date { display: none; }
+}
+
+/* Sur mobile, le bouton d'appel prime sur le sous-titre de la marque */
+@media (max-width: 560px) {
+  .site-header .brand-sub { display: none; }
+}
+
+/* ---------- Téléphone dans l'en-tête ----------
+   L'action la plus courante chez un artisan est l'appel : le numéro doit
+   être atteignable depuis n'importe quelle page, en un geste. */
+
+.site-nav { margin-left: auto; }
+
+.header-tel {
+  order: 3;
+  flex: none;
+  display: inline-block;
+  font: 700 1.05rem/1 var(--cond);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--green-ink);
+  border: 2px solid var(--green-ink);
+  padding: 11px 18px 12px;
+  margin-left: clamp(12px, 2vw, 24px);
+  white-space: nowrap;
+  transition: background-color 160ms ease-out, border-color 160ms ease-out;
+}
+
+.header-tel:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+.header-tel__short { display: none; }
+
+@media (max-width: 1080px) {
+  .header-tel__full { display: none; }
+  .header-tel__short { display: inline; }
+}
+
+@media (max-width: 820px) {
+  .site-nav { margin-left: 0; }
+  .header-tel { order: 0; margin-left: auto; }
+  .nav-toggle { margin-left: 10px; }
+}
+
+@media (max-width: 380px) {
+  .header-tel { padding: 11px 13px 12px; font-size: 0.98rem; }
 }
 
 .nav-toggle {
