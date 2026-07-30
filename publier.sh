@@ -29,4 +29,4 @@ git add -A
 git commit -q -m "${1:-Mise à jour du site}" || echo "Rien de nouveau à publier."
 git push -q origin main
 
-echo "En ligne dans une minute : https://etiennedubo.github.io/ripe-peinture/"
+echo "En ligne dans une minute : https://ripe-peinture.fr"

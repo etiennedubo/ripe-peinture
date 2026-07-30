@@ -47,9 +47,12 @@ puis ouvrir http://localhost:8642
 
 ## Le site en ligne
 
-**https://etiennedubo.github.io/ripe-peinture/**
+**https://ripe-peinture.fr**
 
-Hébergé gratuitement par GitHub Pages, dépôt `etiennedubo/ripe-peinture`.
+Hébergé gratuitement par GitHub Pages, dépôt `etiennedubo/ripe-peinture`,
+domaine `ripe-peinture.fr` acheté chez OVH au nom de la SARL (expire le
+30/07/2029, renouvellement automatique). L'ancienne adresse
+`etiennedubo.github.io/ripe-peinture` redirige automatiquement vers le domaine.
 
 Pour publier une modification, utilisez le script prévu : il tamponne les
 fichiers CSS/JS d'une empreinte, ce qui force les navigateurs à prendre la
