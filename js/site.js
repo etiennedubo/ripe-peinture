@@ -73,10 +73,10 @@
     }, 6000);
   }
 
-  /* Formulaire de contact.
-     FORM_ENDPOINT reste vide tant que le compte Formspree n'est pas créé :
-     le formulaire explique alors comment joindre l'entreprise directement. */
-  var FORM_ENDPOINT = "";
+  /* Formulaire de contact : les demandes partent vers la boîte de l'entreprise
+     via Formspree. Si l'envoi échoue, le visiteur est renvoyé vers le téléphone
+     et l'e-mail affichés en haut de page. */
+  var FORM_ENDPOINT = "https://formspree.io/f/mrendwyk";
 
   var form = document.querySelector("#contact-form");
   if (!form) return;

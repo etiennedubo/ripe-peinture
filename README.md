@@ -20,15 +20,14 @@ Tout ce qui est en attente porte une étiquette jaune « À COMPLÉTER » sur le
 site — rien n'a été inventé. Les fichiers originaux du logo (graphiste) sont
 archivés dans `assets/brand/`.
 
+Le formulaire de contact est actif : il envoie vers `ripe2@wanadoo.fr` via
+Formspree (`FORM_ENDPOINT` dans `js/site.js`), 50 demandes par mois en gratuit.
+
 1. **Photos de chantiers** : les trois « fiches chantier » de la page
    réalisations sont des gabarits marqués « Exemple » ; on y mettra les vrais
    chantiers (photo + lieu + nature des travaux).
-2. **Formulaire de contact** : créer un compte gratuit sur formspree.io avec
-   l'adresse e-mail de l'artisan, puis reporter l'identifiant du formulaire
-   dans `js/site.js` (constante `FORM_ENDPOINT`). Tant que ce n'est pas fait,
-   le formulaire explique au visiteur comment joindre l'entreprise directement.
-3. **Mentions légales** : forme juridique, directeur de la publication, hébergeur.
-4. **Nom de domaine** : proposition retenue à confirmer — `ripe-peinture.fr`.
+2. **Mentions légales** : forme juridique, directeur de la publication, hébergeur.
+3. **Nom de domaine** : proposition retenue à confirmer — `ripe-peinture.fr`.
 
 ## Voir le site en local
 
