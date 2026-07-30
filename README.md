@@ -23,6 +23,14 @@ archivés dans `assets/brand/`.
 Le formulaire de contact est actif : il envoie vers `ripe2@wanadoo.fr` via
 Formspree (`FORM_ENDPOINT` dans `js/site.js`), 50 demandes par mois en gratuit.
 
+**Livraison des e-mails.** Orange/Wanadoo classe les notifications Formspree en
+indésirables tant que l'expéditeur n'est pas déclaré comme contact de confiance.
+À faire une fois sur la boîte de l'artisan : marquer le message « pas
+indésirable » et ajouter l'expéditeur aux contacts autorisés. Filet de sécurité
+recommandé : déclarer un second destinataire dans Formspree (une adresse Gmail),
+et se rappeler que **toutes les demandes restent consultables dans le tableau de
+bord Formspree**, onglet « Submissions », même si un e-mail se perd.
+
 1. **Photos de chantiers** : les trois « fiches chantier » de la page
    réalisations sont des gabarits marqués « Exemple » ; on y mettra les vrais
    chantiers (photo + lieu + nature des travaux).
