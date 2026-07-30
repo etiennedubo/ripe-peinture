@@ -192,7 +192,8 @@ a:hover { color: var(--ink); }
 .panel-head {
   display: flex;
   align-items: center;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 8px 14px;
   padding: 14px clamp(16px, 3vw, 28px);
   border-bottom: 2px solid var(--ink);
 }
@@ -234,10 +235,6 @@ a:hover { color: var(--ink); }
 
 .field dd a { color: var(--ink); }
 
-.fields--dark { background: #3d4954; border-top-color: #3d4954; }
-.fields--dark .field { background: var(--ink); }
-.fields--dark .field dt { color: #9fb0ba; }
-.fields--dark .field dd { color: #fff; }
 
 /* ---------- Étiquette « à compléter » ---------- */
 
@@ -369,67 +366,9 @@ a:hover { color: var(--ink); }
   text-transform: uppercase;
 }
 
-.section-head .num {
-  font: 700 1rem/1 var(--cond);
-  letter-spacing: 0.1em;
-  color: var(--green-ink);
-}
 
 .section-intro { max-width: 68ch; color: var(--slate); margin-bottom: 26px; }
 .section-intro strong { color: var(--ink); }
-
-/* ---------- Lots (prestations) ---------- */
-
-.lots { border-top: 2px solid var(--ink); }
-
-.lot {
-  display: grid;
-  grid-template-columns: 110px 1fr auto;
-  gap: clamp(14px, 3vw, 34px);
-  align-items: start;
-  padding: clamp(18px, 3vw, 26px) clamp(14px, 2vw, 22px);
-  border-bottom: 1px solid var(--rule);
-  background: var(--panel);
-  text-decoration: none;
-  color: var(--ink);
-  transition: background-color 140ms ease-out;
-}
-
-a.lot:hover { background: #f4f7f0; }
-a.lot:hover .lot-go { background: var(--green-ink); color: #fff; border-color: var(--green-ink); }
-
-.lot:last-child { border-bottom: 2px solid var(--ink); }
-
-.lot-num {
-  font: 700 1.05rem/1.2 var(--cond);
-  letter-spacing: 0.1em;
-  color: var(--green-ink);
-  padding-top: 4px;
-}
-
-.lot h3 {
-  font: 700 1.45rem/1.15 var(--cond);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.lot p { color: var(--slate); margin-top: 6px; max-width: 62ch; }
-
-.lot-go {
-  align-self: center;
-  font: 700 1.3rem/1 var(--sans);
-  border: 2px solid var(--ink);
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  transition: background-color 140ms ease-out, color 140ms ease-out, border-color 140ms ease-out;
-}
-
-@media (max-width: 680px) {
-  .lot { grid-template-columns: 1fr; gap: 6px; }
-  .lot-go { display: none; }
-}
 
 /* ---------- Bande sombre (environnements exigeants) ---------- */
 
