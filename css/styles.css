@@ -699,6 +699,40 @@ a:hover { color: var(--ink); }
 
 
 
+/* ---------- Texte légal ---------- */
+
+/* Six champs qui se répartissent sans laisser de case vide */
+.fields--legal {
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--rule);
+  margin-top: 22px;
+}
+
+@media (max-width: 860px) {
+  .fields--legal { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .fields--legal { grid-template-columns: 1fr; }
+}
+
+.legal-text { margin-top: clamp(24px, 4vw, 36px); }
+
+.legal-text h2 {
+  font: 700 1.3rem/1.2 var(--cond);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.legal-text h2 + p { margin-bottom: 0; }
+.legal-text p {
+  color: var(--slate);
+  max-width: 70ch;
+  margin-bottom: 26px;
+}
+.legal-text p:last-child { margin-bottom: 0; }
+
 /* ---------- Appel final ---------- */
 
 .closing { padding-block: clamp(30px, 5vw, 60px); }
