@@ -17,19 +17,18 @@ indépendant de tout autre projet.
 ## Ce qu'il reste à fournir avant la mise en ligne
 
 Tout ce qui est en attente porte une étiquette jaune « À COMPLÉTER » sur le
-site — rien n'a été inventé.
+site — rien n'a été inventé. Les fichiers originaux du logo (graphiste) sont
+archivés dans `assets/brand/`.
 
 1. **Photos de chantiers** : les trois « fiches chantier » de la page
    réalisations sont des gabarits marqués « Exemple » ; on y mettra les vrais
    chantiers (photo + lieu + nature des travaux).
-2. **Le fichier original du logo** : le logo actuel est une reconstitution
-   vectorielle fidèle ; le fichier source de l'artisan la remplacera.
-3. **Formulaire de contact** : créer un compte gratuit sur formspree.io avec
+2. **Formulaire de contact** : créer un compte gratuit sur formspree.io avec
    l'adresse e-mail de l'artisan, puis reporter l'identifiant du formulaire
    dans `js/site.js` (constante `FORM_ENDPOINT`). Tant que ce n'est pas fait,
    le formulaire explique au visiteur comment joindre l'entreprise directement.
-4. **Mentions légales** : SIRET, forme juridique, hébergeur.
-5. **Nom de domaine** : proposition retenue à confirmer — `ripe-peinture.fr`.
+3. **Mentions légales** : forme juridique, directeur de la publication, hébergeur.
+4. **Nom de domaine** : proposition retenue à confirmer — `ripe-peinture.fr`.
 
 ## Voir le site en local
 

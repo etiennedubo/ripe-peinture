@@ -20,9 +20,9 @@ le ton publicitaire, les superlatifs.
 - `--ink: #2e3840` — ardoise foncée : texte courant, filets forts, bandes sombres
 - `--slate: #46525c` — ardoise moyenne : texte secondaire
 - `--rule: #c9cfc8` — filets internes fins
-- `--green: #6aaa35` — vert RIPE (logo) : graphique uniquement (bandes, biseaux,
-  soulignés, gros repères sur fond ardoise). JAMAIS en texte sur blanc
-  (contraste 2,8:1).
+- `--green: #599c29` — vert RIPE (couleur exacte de la charte du graphiste,
+  cf. assets/brand/) : graphique et grands textes uniquement (3,4:1 sur blanc —
+  jamais en petit texte sur blanc).
 - `--green-ink: #3e6b1a` — vert lisible : texte vert sur fond clair (5,8:1)
 - `--green-bright: #8cc63f` — vert clair : accents et texte vert sur fond ardoise
 - `--todo-bg: #fdf6e3` / `--todo-ink: #8a6d1c` — étiquettes « à compléter »

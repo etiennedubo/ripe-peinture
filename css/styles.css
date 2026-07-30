@@ -7,10 +7,10 @@
   --paper: #eef0ec;
   --panel: #ffffff;
   --ink: #2e3840;
-  --slate: #46525c;
+  --slate: #455259;
   --rule: #c9cfc8;
   --rule-soft: #e2e5df;
-  --green: #6aaa35;
+  --green: #599c29;
   --green-ink: #3e6b1a;
   --green-bright: #8cc63f;
   --todo-bg: #fdf6e3;
@@ -99,7 +99,7 @@ a:hover { color: var(--ink); }
 }
 .brand:hover { color: var(--ink); }
 
-.brand svg, .brand img { width: 46px; height: auto; }
+.brand svg, .brand img { width: 52px; height: auto; }
 
 .brand-name {
   font: 700 1.5rem/1 var(--cond);
@@ -292,7 +292,7 @@ a:hover { color: var(--ink); }
 .hero .panel-head { justify-content: space-between; }
 
 .hero-mark { display: flex; align-items: center; gap: 12px; }
-.hero-mark svg, .hero-mark img { width: 54px; height: auto; }
+.hero-mark svg, .hero-mark img { width: 62px; height: auto; }
 
 .hero-since {
   font: 700 1rem/1 var(--cond);
