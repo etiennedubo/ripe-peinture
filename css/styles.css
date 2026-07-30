@@ -586,7 +586,8 @@ a.lot:hover .lot-go { background: var(--green-ink); color: #fff; border-color: v
 
 .presta-group { margin-bottom: clamp(30px, 5vw, 52px); }
 
-.presta-items { border-top: 1px solid var(--rule); }
+.presta-items { border-top: 2px solid var(--ink); }
+.presta-items .presta:last-child { border-bottom: 2px solid var(--ink); }
 
 .presta {
   display: grid;
