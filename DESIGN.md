@@ -62,10 +62,22 @@ Google Fonts distant, conformité RGPD).
 
 ## Mouvement
 
-Un seul moment signé : à l'arrivée sur une page, le panneau d'en-tête
-s'assemble (cadre puis champs, léger décalé, ease-out exponentiel, < 700ms).
-Hovers : balayage vert sur les actions, soulignement des liens. Tout respecte
-`prefers-reduced-motion`.
+**Règle absolue : aucun texte ne dépend d'une animation pour être lisible.**
+Les blocs de contenu ne s'animent qu'en translation (10-14 px), jamais en
+opacité ; si le mouvement se fige (onglet en arrière-plan, JS en échec,
+navigateur exotique), le pire résultat est un décalage de 10 px. Seuls les
+éléments purement décoratifs — le motif du toit dans les têtes de section, le
+repère vert de la frise — ont droit au fondu.
+
+Moment signé : le panneau se pose à l'arrivée (cadre puis champs, décalés,
+`cubic-bezier(0.16, 1, 0.3, 1)`, < 700 ms).
+Mouvement d'accompagnement : les séries se posent dans l'ordre à l'approche
+(frise chronologique, liste des prestations, fiches chantier ; décalage plafonné
+à 4 × 70 ms), et les deux pans du toit se rejoignent dans les têtes de section.
+Le déclenchement lit la position réelle des éléments (pas d'IntersectionObserver)
+et un filet de sécurité à 6 s révèle tout ce qui resterait en attente.
+La classe `motion` sur `<html>` n'est posée que si le visiteur n'a pas demandé
+moins d'animations ; sans elle, ni masquage ni transition.
 
 ## Interdits propres au monde
 

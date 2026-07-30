@@ -18,6 +18,61 @@
   var yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  /* Révélation à l'approche : les éléments d'une même série se posent dans
+     l'ordre, plafonné pour qu'aucun visiteur n'attende. La classe « motion »
+     est posée en amont ; sans elle, rien n'est masqué ni animé.
+     Le calcul se fait à partir de la position réelle des éléments : si le
+     script s'interrompt, un filet de sécurité affiche tout. Une page blanche
+     n'est jamais une option. */
+  if (document.documentElement.classList.contains("motion")) {
+    var pending = [].slice.call(document.querySelectorAll(".reveal, .section-head"));
+
+    ["timeline", "presta-items", "spec-list"].forEach(function (groupClass) {
+      [].forEach.call(document.querySelectorAll("." + groupClass), function (group) {
+        [].forEach.call(group.querySelectorAll(".reveal"), function (el, index) {
+          el.style.setProperty("--reveal-delay", Math.min(index, 4) * 70 + "ms");
+        });
+      });
+    });
+
+    var reveal = function (el) {
+      el.classList.add("in-view");
+    };
+
+    var revealVisible = function () {
+      var limit = window.innerHeight * 0.92;
+      pending = pending.filter(function (el) {
+        var box = el.getBoundingClientRect();
+        if (box.top < limit && box.bottom > 0) {
+          reveal(el);
+          return false;
+        }
+        return true;
+      });
+    };
+
+    var queued = false;
+    var onScroll = function () {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(function () {
+        queued = false;
+        revealVisible();
+      });
+    };
+
+    revealVisible();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("load", revealVisible);
+
+    /* Filet de sécurité : quoi qu'il arrive, rien ne reste masqué. */
+    window.setTimeout(function () {
+      pending.forEach(reveal);
+      pending = [];
+    }, 6000);
+  }
+
   /* Formulaire de contact.
      FORM_ENDPOINT reste vide tant que le compte Formspree n'est pas créé :
      le formulaire explique alors comment joindre l'entreprise directement. */
