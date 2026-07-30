@@ -42,10 +42,13 @@ puis ouvrir http://localhost:8642
 **https://etiennedubo.github.io/ripe-peinture/**
 
 Hébergé gratuitement par GitHub Pages, dépôt `etiennedubo/ripe-peinture`.
-Toute modification poussée sur la branche `main` est en ligne en une minute :
+
+Pour publier une modification, utilisez le script prévu : il tamponne les
+fichiers CSS/JS d'une empreinte, ce qui force les navigateurs à prendre la
+nouvelle version au lieu d'en garder une périmée pendant 10 minutes.
 
 ```bash
-cd /Users/etienne/ripe-peinture && git push
+cd /Users/etienne/ripe-peinture && ./publier.sh "ce que j'ai changé"
 ```
 
 Le nom de domaine (ripe-peinture.fr) pourra être branché dessus plus tard,
