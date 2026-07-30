@@ -319,6 +319,11 @@ a:hover { color: var(--ink); }
 
 .hero .actions { margin-top: 30px; }
 
+/* Accueil « page de garde » : le panneau seul occupe la page */
+.hero--solo { padding-block: clamp(44px, 9vh, 100px) clamp(52px, 11vh, 120px); }
+.hero--solo .panel-body { padding-bottom: clamp(28px, 5vw, 48px); }
+.hero--solo .hero-lede + .hero-lede { margin-top: 12px; }
+
 /* Assemblage du panneau : le seul moment animé */
 @media (prefers-reduced-motion: no-preference) {
   .assemble { animation: panel-in 480ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }

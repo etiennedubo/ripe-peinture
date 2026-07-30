@@ -1,31 +1,33 @@
 <!doctype html>
 <!--
 CONTRAT DE DIRECTION (impeccable)
-THESIS : le site EST le panneau de chantier de RIPE — l'entreprise se présente
-comme sur l'objet réglementaire que tout donneur d'ordre sait lire : champs
-normés, faits vérifiables, zéro emphase. Refusé : le site-artisan générique
+THESIS : le site EST le panneau de chantier de RIPE — l'entreprise se présente
+comme sur l'objet réglementaire que tout donneur d'ordre sait lire : champs
+normés, faits vérifiables, zéro emphase. Refusé : le site-artisan générique
 (hero photo floue + trois cartes à icônes + superlatifs).
-OWN-WORLD : blanc panneau sur fond palissade #eef0ec, cadres 2px ardoise
+OWN-WORLD : blanc panneau sur fond palissade #eef0ec, cadres 2px ardoise
 #2e3840, champs étiquetés (étiquette condensée capitale / valeur grasse),
 biseaux du toit (ardoise + vert #6aaa35) comme seule ornementation, Barlow &
 Barlow Condensed. Reconnaissable sans aucun contenu.
-STORY : en un viewport le visiteur (directeur de labo ou particulier — un seul
-parcours) comprend : entreprise familiale de plâtrerie-peinture depuis 1986,
-rompue aux cahiers des charges exigeants → il demande un devis.
-FIRST VIEWPORT : le panneau : bandeau logo + « depuis 1986 », désignation en
-capitales condensées, ligne d'accroche, rangée de six champs normés
-(fondation, direction, générations, zone, corps d'état, clientèle), actions
-« Demander un devis » / « Voir les prestations » dans le cadre.
-FORM : panneau de chantier — candidat 7/7 de la liste ordonnée, assigné par
-seed a13e0a44 ; staging retenu : panneau plein viewport puis sections-document
-ordonnées (stagings piochés écartés : ils affaiblissent la lecture placard).
+STORY : en un viewport le visiteur (industriel ou particulier — un seul
+parcours) comprend : entreprise familiale de plâtrerie-peinture depuis 1986,
+rompue aux exigences des environnements techniques → il demande un devis.
+FIRST VIEWPORT : le panneau seul — l'accueil est une page de garde (choix
+utilisateur, 30/07/2026) : bandeau logo + « depuis 1986 », désignation en
+capitales condensées, présentation intégrant l'histoire familiale (Robert 1986
+→ Stéphane 2002 → 3ᵉ génération) et la région lyonnaise, actions « Demander un
+devis » / « Voir les prestations ». Le détail (lots, exigence, histoire) vit
+dans les onglets dédiés ; sur l'accueil, « professionnels de l'industrie »
+remplace la mention des laboratoires (choix utilisateur).
+FORM : panneau de chantier — candidat 7/7 de la liste ordonnée, assigné par
+seed a13e0a44 ; staging : page de garde en panneau unique.
 -->
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RIPE — Plâtrerie, peinture et revêtements en Rhône et Isère, depuis 1986</title>
-  <meta name="description" content="RIPE (Rhône Isère Peinture Entretien) : entreprise familiale de plâtrerie, peinture et revêtements de sol depuis 1986. Une importante expérience des environnements exigeants, dont les laboratoires pharmaceutiques.">
+  <title>RIPE — Plâtrerie, peinture et revêtements dans la région lyonnaise, depuis 1986</title>
+  <meta name="description" content="RIPE (Rhône Isère Peinture Entretien)&#8239;: entreprise familiale de plâtrerie, peinture et revêtements de sol depuis 1986, dans la région lyonnaise. La rigueur des environnements techniques, au service des professionnels et des particuliers.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -57,12 +59,12 @@ ordonnées (stagings piochés écartés : ils affaiblissent la lecture placard
 
   <main id="contenu">
 
-    <!-- Le panneau d'entreprise -->
-    <section class="hero wrap" aria-label="Présentation de l'entreprise">
+    <!-- Le panneau d'entreprise : l'accueil est une page de garde -->
+    <section class="hero hero--solo wrap" aria-label="Présentation de l'entreprise">
       <div class="panel assemble">
         <div class="panel-head">
           <span class="hero-mark">
-            <img src="assets/logo-mark.svg" alt="Logo RIPE : deux pans de toit, ardoise et vert" width="54" height="31">
+            <img src="assets/logo-mark.svg" alt="Logo RIPE&#8239;: deux pans de toit, ardoise et vert" width="54" height="31">
             <span class="kicker">Rhône Isère Peinture Entretien</span>
           </span>
           <span class="hero-since">Entreprise familiale — depuis 1986</span>
@@ -70,144 +72,20 @@ ordonnées (stagings piochés écartés : ils affaiblissent la lecture placard
         <div class="panel-body">
           <h1>Plâtrerie · Peinture<br><span class="thin">Revêtements &amp; finitions</span></h1>
           <p class="hero-lede">
-            Depuis trois générations, RIPE réalise vos travaux de plâtrerie, de peinture
-            et de revêtements de sol en Rhône et Isère — avec <strong>la rigueur exigée par
-            les environnements techniques</strong>, laboratoires pharmaceutiques compris.
+            Entreprise familiale fondée par <strong>Robert Dubois en 1986</strong> et
+            dirigée par son fils <strong>Stéphane</strong> depuis 2002, RIPE voit
+            aujourd'hui la <strong>troisième génération</strong> travailler sur ses
+            chantiers.
+          </p>
+          <p class="hero-lede">
+            Plâtrerie, peinture, revêtements de sol&#8239;: nous intervenons dans toute
+            la <strong>région lyonnaise</strong>, avec la rigueur exigée par les
+            environnements techniques et les professionnels de l'industrie.
           </p>
           <div class="actions">
             <a class="btn btn--primary" href="contact.html">Demander un devis</a>
             <a class="btn btn--ghost" href="prestations.html">Voir les prestations</a>
           </div>
-        </div>
-        <dl class="fields">
-          <div class="field"><dt>Fondation</dt><dd>1986 — Robert Dubois</dd></div>
-          <div class="field"><dt>Direction</dt><dd>Stéphane Dubois, depuis 2002</dd></div>
-          <div class="field"><dt>Transmission</dt><dd>3ᵉ génération dans l'entreprise</dd></div>
-          <div class="field"><dt>Zone d'intervention</dt><dd>Rhône &amp; Isère</dd></div>
-          <div class="field"><dt>Corps d'état</dt><dd>Plâtrerie, peinture, sols</dd></div>
-          <div class="field"><dt>Clientèle</dt><dd>Professionnels &amp; particuliers</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- Les corps d'état, énumérés comme des lots -->
-    <section class="doc-section wrap" aria-labelledby="titre-lots">
-      <div class="section-head">
-        <svg class="rive" viewBox="0 0 44 16" aria-hidden="true">
-          <polygon fill="#46525c" points="0,16 11,1 16,1 5,16"/>
-          <polygon fill="#6aaa35" points="17,4 22,4 33,16 28,16"/>
-        </svg>
-        <h2 id="titre-lots">Nos corps d'état</h2>
-      </div>
-      <p class="section-intro">
-        Un interlocuteur unique pour l'ensemble du second œuvre : les quatre lots
-        ci-dessous couvrent vos travaux, du neuf comme de la rénovation.
-      </p>
-      <div class="lots">
-        <a class="lot" href="prestations.html#platrerie">
-          <span class="lot-num">Lot 01</span>
-          <span>
-            <h3>Plâtrerie &amp; cloisons</h3>
-            <p>Plâtrerie traditionnelle, plaques de plâtre (placo), création de cloisons, pose de faux plafonds.</p>
-          </span>
-          <span class="lot-go" aria-hidden="true">→</span>
-        </a>
-        <a class="lot" href="prestations.html#peinture">
-          <span class="lot-num">Lot 02</span>
-          <span>
-            <h3>Peinture &amp; finitions</h3>
-            <p>Mise en peinture en neuf et en rénovation, préparation des supports, finitions soignées.</p>
-          </span>
-          <span class="lot-go" aria-hidden="true">→</span>
-        </a>
-        <a class="lot" href="prestations.html#sols">
-          <span class="lot-num">Lot 03</span>
-          <span>
-            <h3>Revêtements de sol</h3>
-            <p>Revêtements de sol et résine de sol, y compris en environnement technique.</p>
-          </span>
-          <span class="lot-go" aria-hidden="true">→</span>
-        </a>
-        <a class="lot" href="prestations.html#protections">
-          <span class="lot-num">Lot 04</span>
-          <span>
-            <h3>Protections de chantier</h3>
-            <p>Installation de protections pour préserver les locaux et les équipements pendant les travaux.</p>
-          </span>
-          <span class="lot-go" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- La preuve : les environnements exigeants -->
-    <section class="band-dark" aria-labelledby="titre-exigence">
-      <div class="wrap band-grid">
-        <div>
-          <div class="section-head">
-            <svg class="rive" viewBox="0 0 44 16" aria-hidden="true">
-              <polygon fill="#8cc63f" points="0,16 11,1 16,1 5,16"/>
-              <polygon fill="#6aaa35" points="17,4 22,4 33,16 28,16"/>
-            </svg>
-            <h2 id="titre-exigence">Habitués aux cahiers des charges <em>difficiles</em></h2>
-          </div>
-          <p>
-            RIPE accompagne depuis de longues années des clients professionnels et
-            intervient dans des environnements techniques — <strong>laboratoires
-            pharmaceutiques notamment</strong> — où chaque intervention doit respecter
-            un cahier des charges strict : propreté, traçabilité, coordination avec
-            l'activité du site.
-          </p>
-          <p style="margin-top: 14px;">
-            Cette exigence n'est pas réservée à l'industrie : c'est la même équipe,
-            les mêmes méthodes et le même niveau de finition sur tous les chantiers,
-            y compris chez les particuliers.
-          </p>
-        </div>
-        <div>
-          <ul class="spec-list">
-            <li><span class="tick">01</span> Interventions en site occupé, en coordination avec votre activité</li>
-            <li><span class="tick">02</span> Protection des locaux et des équipements avant travaux</li>
-            <li><span class="tick">03</span> Respect des protocoles d'accès et consignes propres à chaque site</li>
-            <li><span class="tick">04</span> Finitions contrôlées, chantier rendu propre</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- La maison familiale -->
-    <section class="doc-section wrap" aria-labelledby="titre-maison">
-      <div class="section-head">
-        <svg class="rive" viewBox="0 0 44 16" aria-hidden="true">
-          <polygon fill="#46525c" points="0,16 11,1 16,1 5,16"/>
-          <polygon fill="#6aaa35" points="17,4 22,4 33,16 28,16"/>
-        </svg>
-        <h2 id="titre-maison">Une maison familiale</h2>
-      </div>
-      <div class="panel">
-        <dl class="fields">
-          <div class="field"><dt>1986</dt><dd>Robert Dubois fonde l'entreprise</dd></div>
-          <div class="field"><dt>2002</dt><dd>Stéphane Dubois reprend la direction</dd></div>
-          <div class="field"><dt>Aujourd'hui</dt><dd>La 3ᵉ génération travaille dans l'entreprise</dd></div>
-        </dl>
-        <div class="panel-body" style="padding-top: 18px; padding-bottom: 22px;">
-          <p class="section-intro" style="margin-bottom: 14px;">
-            Quarante ans de chantiers transmis de père en fils : le savoir-faire, les
-            méthodes, et surtout une réputation qui se construit chantier après chantier.
-          </p>
-          <a class="btn btn--ghost" href="entreprise.html">Découvrir notre histoire</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Appel final -->
-    <section class="closing wrap" aria-labelledby="titre-devis">
-      <div class="panel">
-        <div class="panel-body">
-          <div>
-            <h2 id="titre-devis">Un chantier à préparer ?</h2>
-            <p>Décrivez-nous votre projet : nous revenons vers vous avec un devis clair.</p>
-          </div>
-          <a class="btn btn--primary" href="contact.html">Demander un devis</a>
         </div>
       </div>
     </section>
@@ -237,7 +115,7 @@ ordonnées (stagings piochés écartés : ils affaiblissent la lecture placard
       </div>
       <div class="footer-legal">
         <span>© <span data-year>2026</span> RIPE — Rhône Isère Peinture Entretien</span>
-        <span>SIRET : <span class="todo">à compléter</span></span>
+        <span>SIRET&#8239;: <span class="todo">à compléter</span></span>
         <a href="mentions-legales.html">Mentions légales</a>
       </div>
     </div>
