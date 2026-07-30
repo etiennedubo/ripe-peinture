@@ -657,6 +657,45 @@ a:hover { color: var(--ink); }
   .plate-photo--img img { height: auto; aspect-ratio: 4 / 3; }
 }
 
+/* Fiche avant / après : les deux photos occupent toute la largeur du panneau,
+   les rubriques passent dessous. Aucun curseur à faire glisser : le visiteur
+   doit voir la transformation sans rien avoir à manipuler. */
+.duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.duo-item { position: relative; margin: 0; background: var(--panel); }
+
+.duo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.duo-item figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font: 700 0.78rem/1 var(--cond);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--slate);
+  padding: 8px 13px;
+}
+
+.duo-item--apres figcaption { background: var(--green-ink); }
+
+@media (max-width: 760px) {
+  .duo { grid-template-columns: 1fr; }
+}
+
 .fiche .fields { border-top: none; }
 
 /* Une rubrique par ligne, réparties sur toute la hauteur de la photo :
