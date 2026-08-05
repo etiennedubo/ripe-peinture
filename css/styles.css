@@ -692,6 +692,11 @@ a:hover { color: var(--ink); }
 
 .duo-item--apres figcaption { background: var(--green-ink); }
 
+/* Photos prises au téléphone en portrait. Deux images 3/4 côte à côte forment un
+   bloc large de proportions proches d'une seule photo horizontale : la fiche garde
+   sa hauteur, et le mur se voit de la plinthe au plafond dans la même image. */
+.duo--portrait .duo-item img { aspect-ratio: 3 / 4; }
+
 @media (max-width: 760px) {
   .duo { grid-template-columns: 1fr; }
 }
