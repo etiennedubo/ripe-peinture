@@ -74,6 +74,110 @@
     }, 6000);
   }
 
+  /* Agrandissement des photos de chantier.
+     Sur un téléphone, une photo de fiche fait cinq centimètres de large : celui
+     qui veut juger une finition doit pouvoir s'approcher. Le déclencheur est un
+     vrai bouton posé par-dessus l'image — l'image garde son texte alternatif,
+     la mise en page n'est pas touchée, et sans JavaScript aucune promesse
+     d'agrandissement n'est affichée. */
+  var photos = [].slice.call(document.querySelectorAll(".fiche .plate-photo--img img, .fiche .duo-item img"));
+
+  if (photos.length) {
+    var box = null;
+    var boxImg = null;
+    var boxTitle = null;
+    var closeBtn = null;
+    var opener = null;
+    var current = 0;
+
+    var legend = function (img) {
+      var article = img.closest(".fiche");
+      var kicker = article ? article.querySelector(".kicker") : null;
+      var caption = img.parentNode.querySelector("figcaption");
+      var parts = [];
+      if (kicker) parts.push(kicker.textContent.trim());
+      if (caption) parts.push(caption.textContent.trim());
+      return parts.join(" — ");
+    };
+
+    var build = function () {
+      box = document.createElement("div");
+      box.className = "lightbox";
+      box.hidden = true;
+      box.innerHTML =
+        '<div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Photo de chantier agrandie">' +
+        '<div class="lightbox__head">' +
+        '<span class="kicker lightbox__title"></span>' +
+        '<button class="lightbox__close" type="button">Fermer</button>' +
+        "</div>" +
+        '<img class="lightbox__img" alt="">' +
+        "</div>";
+      document.body.appendChild(box);
+
+      boxImg = box.querySelector(".lightbox__img");
+      boxTitle = box.querySelector(".lightbox__title");
+      closeBtn = box.querySelector(".lightbox__close");
+
+      closeBtn.addEventListener("click", close);
+      box.addEventListener("click", function (event) {
+        if (event.target === box) close();
+      });
+    };
+
+    var show = function (index) {
+      current = (index + photos.length) % photos.length;
+      var img = photos[current];
+      boxImg.src = img.currentSrc || img.src;
+      boxImg.alt = img.alt;
+      boxTitle.textContent = legend(img);
+    };
+
+    var open = function (index) {
+      if (!box) build();
+      opener = document.activeElement;
+      show(index);
+      box.hidden = false;
+      document.documentElement.classList.add("lightbox-open");
+      closeBtn.focus();
+    };
+
+    function close() {
+      if (!box || box.hidden) return;
+      box.hidden = true;
+      document.documentElement.classList.remove("lightbox-open");
+      if (opener && opener.focus) opener.focus();
+      opener = null;
+    }
+
+    /* Le clavier ne doit jamais sortir de la fenêtre ouverte, et Échap la ferme
+       toujours — un visiteur au clavier ne doit pas se retrouver piégé. */
+    document.addEventListener("keydown", function (event) {
+      if (!box || box.hidden) return;
+      if (event.key === "Escape") {
+        close();
+      } else if (event.key === "Tab") {
+        event.preventDefault();
+        closeBtn.focus();
+      } else if (event.key === "ArrowRight") {
+        show(current + 1);
+      } else if (event.key === "ArrowLeft") {
+        show(current - 1);
+      }
+    });
+
+    photos.forEach(function (img, index) {
+      var holder = img.parentNode;
+      var trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.className = "zoom-btn";
+      trigger.setAttribute("aria-label", "Agrandir la photo : " + img.alt);
+      trigger.addEventListener("click", function () {
+        open(index);
+      });
+      holder.appendChild(trigger);
+    });
+  }
+
   /* Formulaire de contact : les demandes partent vers la boîte de l'entreprise
      via Formspree. Si l'envoi échoue, le visiteur est renvoyé vers le téléphone
      et l'e-mail affichés en haut de page. */
