@@ -49,11 +49,12 @@ echo "Certificat"
 fin=$(echo | openssl s_client -servername ripe-peinture.fr -connect ripe-peinture.fr:443 2>/dev/null | openssl x509 -noout -enddate 2>/dev/null | cut -d= -f2)
 [ -n "$fin" ] && dire_ok "valide jusqu'au $fin" || dire_ko "certificat illisible"
 
-# Le www a son propre certificat : tant qu'il n'est pas corrigé, un visiteur
-# qui tape « www » voit une alerte de sécurité. Vérifié à part, exprès.
+# Le www a son propre certificat, servi par Cloudflare depuis le 06/08/2026.
+# Vérifié à part : c'est l'adresse que les clients tapent quand on la leur dicte
+# au téléphone, et une alerte de sécurité y coûte cher.
 code_www=$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 "https://www.ripe-peinture.fr")
 if [ "$code_www" = "000" ]; then
-  dire_ko "https://www.ripe-peinture.fr échoue encore (correctif Cloudflare en attente)"
+  dire_ko "https://www.ripe-peinture.fr : connexion sécurisée impossible — vérifier le certificat Cloudflare"
 else
   dire_ok "https://www.ripe-peinture.fr répond (code $code_www)"
 fi
