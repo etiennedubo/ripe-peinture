@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="RIPE — Plâtrerie, peinture, sols, cloisons, plafonds. Région lyonnaise et nord-iséroise.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="css/styles.css?v=0a7149b3">
+  <link rel="stylesheet" href="css/styles.css?v=b6ab7b64">
   <script>if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) document.documentElement.classList.add('motion');</script>
 </head>
 <body>
@@ -97,6 +97,17 @@
           <div class="panel-body">
             <form id="contact-form" novalidate>
               <input type="hidden" name="_subject" value="Demande de devis depuis le site RIPE">
+
+              <!-- Piège à robots : ce champ est invisible et hors du parcours au
+                   clavier, donc aucun visiteur ne le remplit jamais. Les robots
+                   qui remplissent tout ce qu'ils trouvent se dénoncent seuls, et
+                   leur envoi est écarté sans consommer le quota mensuel du
+                   service de messagerie. -->
+              <div class="form-piege" aria-hidden="true">
+                <label for="site-web">Ne remplissez pas ce champ</label>
+                <input id="site-web" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
               <div class="form-alert" hidden tabindex="-1" role="alert">
                 Votre demande n'a pas pu être envoyée. Contactez-nous directement
                 avec le téléphone ou l'e-mail affichés en haut de page. Votre message
@@ -141,6 +152,13 @@
               <p class="form-note">
                 Professionnels&#8239;: joignez votre cahier des charges à votre demande,
                 nous y répondons point par point.
+              </p>
+
+              <p class="form-note form-note--legal">
+                Vos coordonnées servent uniquement à répondre à cette demande. Elles
+                ne sont ni revendues ni utilisées à des fins publicitaires, et vous
+                pouvez demander leur suppression à tout moment&#8239;:
+                <a href="mentions-legales.html">en savoir plus</a>.
               </p>
             </form>
 
@@ -188,6 +206,6 @@
     </div>
   </footer>
 
-  <script src="js/site.js?v=0a7149b3"></script>
+  <script src="js/site.js?v=b6ab7b64"></script>
 </body>
 </html>

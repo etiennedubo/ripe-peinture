@@ -14,12 +14,18 @@ v = hashlib.sha1(
     pathlib.Path('css/styles.css').read_bytes() + pathlib.Path('js/site.js').read_bytes()
 ).hexdigest()[:8]
 
+# 404.html pointe ses fichiers en chemin absolu (/css/…), parce qu'elle peut
+# être servie depuis n'importe quelle adresse : le motif accepte donc la
+# barre oblique de tête et la restitue telle quelle.
 for name in ['index.html', 'entreprise.html', 'prestations.html',
-             'realisations.html', 'contact.html', 'mentions-legales.html']:
+             'realisations.html', 'contact.html', 'mentions-legales.html',
+             '404.html']:
     p = pathlib.Path(name)
     t = p.read_text()
-    t = re.sub(r'href="css/styles\.css(\?v=[a-f0-9]+)?"', f'href="css/styles.css?v={v}"', t)
-    t = re.sub(r'src="js/site\.js(\?v=[a-f0-9]+)?"', f'src="js/site.js?v={v}"', t)
+    t = re.sub(r'href="(/?)css/styles\.css(\?v=[a-f0-9]+)?"',
+               lambda m: f'href="{m.group(1)}css/styles.css?v={v}"', t)
+    t = re.sub(r'src="(/?)js/site\.js(\?v=[a-f0-9]+)?"',
+               lambda m: f'src="{m.group(1)}js/site.js?v={v}"', t)
     p.write_text(t)
 
 print(f'Version des fichiers : {v}')

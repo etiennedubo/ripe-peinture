@@ -872,6 +872,26 @@ a:hover { color: var(--ink); }
   margin-top: 20px;
 }
 
+/* La mention sur les données passe après l'information utile : elle doit être
+   lisible et trouvable, pas occuper le devant de la scène. */
+.form-note--legal {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 10px;
+  font-size: 0.88rem;
+}
+
+/* Piège à robots. Retiré de l'affichage sans « display: none » ni
+   « visibility: hidden », que les robots savent reconnaître et ignorer. */
+.form-piege {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .form-row { margin-bottom: 18px; }
 
 .form-row label {

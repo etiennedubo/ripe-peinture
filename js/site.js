@@ -207,6 +207,20 @@
     event.preventDefault();
     clearErrors();
 
+    /* Le champ piège a été rempli : c'est un robot. On lui montre le même
+       écran de confirmation qu'à un visiteur — inutile de lui apprendre qu'il
+       a été repéré — mais rien n'est envoyé, donc le quota mensuel reste
+       disponible pour les vraies demandes. */
+    var piege = form.querySelector("[name=_gotcha]");
+    if (piege && piege.value) {
+      form.hidden = true;
+      if (successBox) {
+        successBox.hidden = false;
+        successBox.focus();
+      }
+      return;
+    }
+
     var valid = true;
     var focusTarget = null;
 
